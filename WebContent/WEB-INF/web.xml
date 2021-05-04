@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  <display-name>JSPBook</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <filter>
+  	<filter-name>Filter01</filter-name>
+  	<filter-class>chapter12.AuthenFilter</filter-class>
+  </filter>
+  
+  <filter>
+  	<filter-name>Filter02</filter-name>
+  	<filter-class>chapter12.AuthenFilter02</filter-class>
+  	<init-param>
+  		<param-name>param1</param-name>
+  		<param-value>id</param-value>
+  	</init-param>
+  	<init-param>
+  		<param-name>param2</param-name>
+  		<param-value>pw</param-value>
+  	</init-param>
+  </filter>
+  
+  <filter>
+  	<filter-name>LogFilter</filter-name>
+  	<filter-class>chapter12.LogFileFilter</filter-class>
+  	<init-param>
+  		<param-name>filename</param-name>
+  		<param-value>c:\\log\\monitor.log</param-value>
+  	</init-param>
+  </filter>
+  
+  <filter-mapping>
+  	<filter-name>Filter01</filter-name>
+  	<url-pattern>/chapter12/filter01_process.jsp</url-pattern>
+  </filter-mapping>
+  
+  <filter-mapping>
+  	<filter-name>Filter02</filter-name>
+  	<url-pattern>/chapter12/filter02_process.jsp</url-pattern>
+  </filter-mapping>
+  
+  <filter-mapping>
+  	<filter-name>LogFilter</filter-name>
+  	<url-pattern>/chapter12/logTest.jsp</url-pattern>
+  </filter-mapping>
+
+  
+  <security-role>
+  	<role-name>role1</role-name>
+  </security-role>
+  
+  <security-constraint>
+  	<web-resource-collection>
+  		<web-resource-name>JSPBook</web-resource-name>
+  		<url-pattern>/chapter9/security02.jsp</url-pattern>
+  		<http-method>GET</http-method>
+  	</web-resource-collection>
+  	<auth-constraint>
+  		<description>관리자 권한</description>
+  		<role-name>role1</role-name>
+  	</auth-constraint>
+  </security-constraint>
+  
+  <login-config>
+  	<auth-method>FORM</auth-method>
+  	<form-login-config>
+  		<form-login-page>/chapter9/login01.jsp</form-login-page>
+  		<form-error-page>/chapter9/error01.jsp</form-error-page>
+  	</form-login-config>
+  </login-config>
+</web-app>
+
+
+
