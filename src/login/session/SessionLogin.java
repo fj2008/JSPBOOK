@@ -36,12 +36,15 @@ public class SessionLogin extends HttpServlet {
 		String userPW = "pw";
 		String nickname = "»ç¿ëÀÚ";
 		
-		if(id.equals(userID) &&pw.equals(userPW)) {
-			session.setAttribute("isLogin", true);
-			session.setAttribute("nickName", nickname);
-		}else {
-			response.setStatus(400);
-		}
+			if(id.equals(userID) &&pw.equals(userPW)) {
+				session.setAttribute("isLogin", true);
+				session.setAttribute("nickName", nickname);
+			}else {
+				response.setStatus(400);
+			}
+		
+		
+	
 		
 	
 		

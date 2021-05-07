@@ -21,11 +21,11 @@ public class LoginCheckFilter implements Filter {
 	@Override
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
 			throws IOException, ServletException {
-		if(설정된 세션값 == null) {
+		
 			// loginForm.jsp 로 이동
 			RequestDispatcher dis = request.getRequestDispatcher("/JSPBook/loginForm.jsp");
 			dis.forward(request, response);
-		}
+		
 		
 	}
 
