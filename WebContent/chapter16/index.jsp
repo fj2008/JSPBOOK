@@ -33,7 +33,7 @@
 			var pw = $("[name=pw]").val();
 			
 			$.ajax({
-				url:"/JSPBook/chapter16/login_process.jsp",
+				url:"/JSPBook/member/login",
 				data:"id="+id+"&pw="+pw,
 				type: "post",
 				success: function(){

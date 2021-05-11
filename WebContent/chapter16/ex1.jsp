@@ -5,7 +5,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%
 	/*
-	DB에 select,insertm,update,delete 를 하기 위한 준비./db 연결하기
+	DB에 select,insert,update,delete 를 하기 위한 준비./db 연결하기
 	1. 쿼리를 수행할 Connection 객체 생성  16
 	2. 연결을 수행할 Driver 로딩 19
 	3. DBMS와 연결20
